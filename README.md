@@ -13,9 +13,10 @@ This repository looks at the daily price of some top cryptocurrencies, uses clus
 
 ## Predicting Bitcoin prices
 - Dataset: `2,042 records of Bitcoin daily average prices`, calculated by averaging daily open, close, high and low prices.
-- Window size: `30` lagged values of the series.
-- Models: `Multilayer Perceptron`, `Recurrent Neural Networks` with simple Recurrent cells, `Long Short-Term Memory` cells and `Gated Recurrent Unit` cells.
+- Window size: `10` lags.
+- Models: `Multilayer Perceptron`, `Recurrent Neural Networks` with simple Recurrent cells, `Long Short-Term Memory` cells and `Gated Recurrent Unit` cells. Ensemble method is used for final predictions.
 - Scaling: Both the inputs and outputs of train, validation and test sets are standardized, by removing the mean value of train inputs then divided by the train inputs standard deviation. This is to ensure the inputs and outputs of each dataset are on the same scale, helping the models to converge faster. In the inference step, the model predictions will be inversely transformed to the real scale.
 
 ## Data source
-The raw data is retrieved from the “Every Cryptocurrency Daily Market Price” dataset on Kaggle. 
+The raw data is retrieved from the <a href="https://www.kaggle.com/jessevent/all-crypto-currencies"> Every Cryptocurrency Daily Market Price </a> dataset on Kaggle. 
+
